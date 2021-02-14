@@ -29,6 +29,7 @@ points(p1,p2, col = "red", pch=19)
 text(-1,m*(-1)+b+2,'arriba')
 text(1,m*(1)+b-2,'abajo')
 
+#Salida función por ventana de comandos
 if(p2>m*p1+b){
   cat("El punto (",p1,",",p2,")"," está por ENCIMA de la recta", "y=",m,"x","+",b)
 }else if(p2<m*p1+b){
