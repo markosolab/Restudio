@@ -1,12 +1,12 @@
-###############################################################################
+#################################################################
 #Title: Procedimiento de los determinantes
-#Author: Iván Martín Gómez
+#Authors: Iván Martín Gómez and Markos Aguirre Elorza
 #Date: Saturday 13th February 2021
-#Descriptions: Dados dos vectores con origen en el origen, construimos el
-#              una matriz A que tiene como filas los vectores, dibujamos el paralelograma que
-#              definen los dos vectores y calculamos el área del paralelogramo mediante el uso
-#              del determinante de la matriz A
-###############################################################################
+#Descriptions: Dados dos vectores con origen en el origen del Sistema de Referencia, 
+#construimos el una matriz A que tiene como filas los vectores, dibujamos el paralelograma que
+#definen los dos vectores y calculamos el área del paralelogramo mediante el uso
+#del determinante de la matriz A
+#################################################################
 funcion_procedimiento_determinantes <- function(v1,v2){
   
   #Construimos Matriz A
@@ -24,7 +24,7 @@ funcion_procedimiento_determinantes <- function(v1,v2){
   min_y=min(y)-1
   max_y=max(y)+1
   #Dibujamos
-  plot(0,0,xlim=c(min_x,max_x),ylim=c(min_y,max_y),main = paste("Poligono"))
+  plot(0,0,xlab="x", ylab="y",xlim=c(min_x,max_x),ylim=c(min_y,max_y),main = paste("Poligono"))
   points(A[1,1],A[1,2], main = paste("Poligono"))
   points(A[2,1],A[2,2], main = paste("Poligono"))
   points(A[1,1]+A[2,1],A[1,2]+A[2,2], main = paste("Poligono"))
@@ -37,18 +37,8 @@ funcion_procedimiento_determinantes <- function(v1,v2){
 #Probamos la función
 rm(list=ls())#Limpia Global Environment
 dev.off()#Limpia los plots
-#Ejemplo 1:
-v1=c(1,0)
-v2=c(0,1)
-funcion_procedimiento_determinantes(v1,v2)
-#Ejemplo 2:
-v1=c(0,1)
-v2=c(1,0)funcion_procedimiento_determinantes(v1,v2)
-#Ejemplo 3:
+#Ejemplo:
 v1=c(1,2)
 v2=c(-1,1)
 funcion_procedimiento_determinantes(v1,v2)
-#Ejemplo 4:
-v1=c(-1,1)
-v2=c(1,2)
-funcion_procedimiento_determinantes(v1,v2)
+

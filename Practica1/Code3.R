@@ -1,11 +1,11 @@
-###############################################################################
-#Title: Punto_Recta utilizando Dibujo y criterio visual Usuario
-#Author: Iván Martín Gómez
+#################################################################
+#Title: Posición Punto respecto a Recta utilizando Dibujo y criterio visual Usuario
+#Authors: Iván Martín Gómez and Markos Aguirre Elorza
 #Date: Saturday 13th February 2021
 #Descriptions: Dado un punto p=(p1,p2) y una recta y=mx+b, decidir si el punto
-#              está por encima, debajo o sobre la recta. No se contempla el caso de
-#              de rectas verticales
-###############################################################################
+#está por encima, debajo o sobre la recta. No se contempla el caso de
+#de rectas verticales
+#################################################################
 
 funcion_PuntoRecta_Dibujo <- function(coordenada_x_punto = NULL,coordenada_y_punto = NULL, pendiente_recta = NULL, ordenada_origen_recta = NULL){
   
@@ -30,7 +30,7 @@ funcion_PuntoRecta_Dibujo <- function(coordenada_x_punto = NULL,coordenada_y_pun
   }else{
     y=(y2:y1)
   }
-  plot(x,m*x+b, type='l', xlab="x", ylab="y=mx+b", col="blue")
+  plot(x,m*x+b, type='l', xlab="x", ylab="y", col="blue")
   points(p1,p2, col = "red", pch=19)
   text(p1-1,(m*(p1-1)+b)+2,'arriba')
   text(p1-1,(m*(p1-1)+b)-2,'abajo')
@@ -40,5 +40,15 @@ funcion_PuntoRecta_Dibujo <- function(coordenada_x_punto = NULL,coordenada_y_pun
 #Probamos la función
 rm(list=ls())#Limpia Global Environment
 dev.off()#Limpia los plots
-#Ejemplo 1: p=(1,2), recta == y=3x+2
+#Problema 1: p=(1,2), recta == y=3x+2
 funcion_PuntoRecta_Dibujo(1,2,3,2)
+#Problema 2: p=(-1,3), recta == y=3x+2
+funcion_PuntoRecta_Dibujo(-1,3,3,2)
+#Problema 3: p=(1,4), recta == y=3x+2
+funcion_PuntoRecta_Dibujo(1,4,3,2)
+#Problema 4: p=(1,1), recta == y=5x+1
+funcion_PuntoRecta_Dibujo(1,1,5,1)
+#Problema 5: p=(2,3), recta == y=-2x+1
+funcion_PuntoRecta_Dibujo(2,3,-2,1)
+#Problema 6: p=(0,-4), recta == y=-2x+1
+funcion_PuntoRecta_Dibujo(0,-4,-2,1)

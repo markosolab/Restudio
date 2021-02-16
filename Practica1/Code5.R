@@ -1,18 +1,18 @@
-###############################################################################
+#################################################################
 #Title: Ejercicio área paralelogramo descomponiendo en triángulos
-#Author: Iván Martín Gómez
+#Authors: Iván Martín Gómez and Markos Aguirre Elorza
 #Date: Saturday 13th February 2021
 #Descriptions: Descomponemos el paralelogramo en dos triángulos y mediante la
-#              fórmula conocida para obtener el área de un triangulo, calculamos
-#              el área del paralelogramo.
-#              ÁreaParalelogramo= ÁreaTriángulo1 + ÁreaTriángulo2
-#              donde: ÁreaTriánguloi= (base x altura) /2
-#              Tomamos como base la longitud del vector suma para ambos triángulos
-#              Tomamos como altura triángulo 1 la longitud del segmento de recta
-#              perpendicular a la diagonal que pasa por el vértice definido por v1
-#              Tomamos como altura triángulo 2 la longitud del segmento de recta
-#              perpendicular a la diagonal que pasa por el vértice definido por v2
-###############################################################################
+#fórmula conocida para obtener el área de un triángulo, calculamos
+#el área del paralelogramo.
+#ÁreaParalelogramo= ÁreaTriángulo1 + ÁreaTriángulo2
+#donde: ÁreaTriángulo= (base x altura) /2
+#Tomamos como base la longitud del vector suma para ambos triángulos
+#Tomamos como altura triángulo 1 la longitud del segmento de recta
+#perpendicular a la diagonal que pasa por el vértice definido por v1
+#Tomamos como altura triángulo 2 la longitud del segmento de recta
+#perpendicular a la diagonal que pasa por el vértice definido por v2
+#################################################################
 funcion_procedimiento_triangulos <- function(v1,v2){
 dim1=length(v1)
 dim2=length(v2)
@@ -43,7 +43,7 @@ A<-matrix(c(v1,v2), nrow=dim1, ncol=dim2, byrow = TRUE)
   min_y=min(c(min_y_triangulo1,min_y_triangulo2))
   max_y=min(c(max_y_triangulo1,max_y_triangulo2))
   
-  plot(0,0,xlim=c(min_x,max_x),ylim=c(min_y,max_y),main = paste("Triangulos"))
+  plot(0,0,xlab="x", ylab="y",xlim=c(min_x,max_x),ylim=c(min_y,max_y),main = paste("Triangulos"))
   points(A[1,1],A[1,2])
   points(A[1,1]+A[2,1],A[1,2]+A[2,2])
   polygon(x_s_triangulo1, y_s_triangulo1, col = "orange", lty = 1, lwd = 2, border = "blue")
@@ -65,7 +65,7 @@ A<-matrix(c(v1,v2), nrow=dim1, ncol=dim2, byrow = TRUE)
   area=area_1+area_2
   
   cat("El área del Triángulo 1 (Verde) es: ", area_1,"\n")
-  cat("El área del Triángulo 2 (Naranje) es: ", area_2,"\n")
+  cat("El área del Triángulo 2 (Naranja) es: ", area_2,"\n")
   cat("El área de paralelogramo es: ", area,"\n")
   
 }
