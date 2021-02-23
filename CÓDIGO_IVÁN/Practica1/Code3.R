@@ -6,7 +6,6 @@
 #está por encima, debajo o sobre la recta. No se contempla el caso de
 #de rectas verticales
 #################################################################
-
 funcion_PuntoRecta_Dibujo <- function(coordenada_x_punto = NULL,coordenada_y_punto = NULL, pendiente_recta = NULL, ordenada_origen_recta = NULL){
   
   #Control de errores
@@ -20,10 +19,10 @@ funcion_PuntoRecta_Dibujo <- function(coordenada_x_punto = NULL,coordenada_y_pun
   b=ordenada_origen_recta
   
   #Dibujamos
-  x1=p1-3
-  x2=p1+3
+  x1=p1-2
+  x2=p1+2
   x=(x1:x2)
-  y1=p2
+  y1=funcion_construir_recta_con_pendiente_ordenada_origen()
   y2=m*p1+b
   if(y1<y2){
     y=(y1:y2)

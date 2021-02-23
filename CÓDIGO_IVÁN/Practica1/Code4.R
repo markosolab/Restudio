@@ -16,9 +16,13 @@ funcion_procedimiento_determinantes <- function(v1,v2){
     cat("Error, los vectores deben tener la misma longitud")
     return -1
   }
-  A<-matrix(c(v1,v2), nrow=dim1, ncol=dim2, byrow = TRUE)
+  A<-matrix(c(v1,v2), nrow=dim1, ncol=dim2, byrow = TRUE) #En esta aplicación en concreto el resultado no varia si ponemos los vectores por filas o por columnas
+  #Recorrido en sentido en Contrario Agujas del Reloj
   x <- c(0,A[1,1],A[1,1]+A[2,1],A[2,1])
   y <- c(0,A[1,2],A[1,2]+A[2,2],A[2,2])
+  #Recorrido en sentido Agujas del Reloj
+  #x <- c(0,A[2,1],A[1,1]+A[2,1],A[1,1])
+  #y <- c(0,A[2,2],A[1,2]+A[2,2],A[1,2])
   min_x=min(x)-1
   max_x=max(x)+1
   min_y=min(y)-1
@@ -29,15 +33,25 @@ funcion_procedimiento_determinantes <- function(v1,v2){
   points(A[2,1],A[2,2], main = paste("Poligono"))
   points(A[1,1]+A[2,1],A[1,2]+A[2,2], main = paste("Poligono"))
   
-  polygon(x, y, col = "orange", lty = 1, lwd = 2, border = "blue")
+  polygon(x, y, col = "pink", lty = 1, lwd = 2, border = "yellow")
   area=det(A)
+  text(0,-1,'El Area es= ');
+  text(1,-1,area)
   cat("El área es: ",area)
 }
 
 #Probamos la función
 rm(list=ls())#Limpia Global Environment
 dev.off()#Limpia los plots
-#Ejemplo:
+#Ejemplo 1:
+v1=c(1,0)
+v2=c(0,1)
+funcion_procedimiento_determinantes(v1,v2)
+#Ejemplo 2:
+v1=c(0,1)
+v2=c(1,0)
+funcion_procedimiento_determinantes(v1,v2)
+#Ejemplo 3:
 v1=c(1,2)
 v2=c(-1,1)
 funcion_procedimiento_determinantes(v1,v2)

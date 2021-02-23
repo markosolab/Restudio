@@ -44,7 +44,7 @@ funcion_PuntoRecta_Proyeccion <- function(coordenada_x_punto = NULL,coordenada_y
     cat("El punto (",p1,",",p2,")"," está por DEBAJO de la recta", "y=",m,"x","+",b)
     
   }else{
-    cat("El punto (",p1,",",p2,")"," está por SOBRE de la recta", "y=",m,"x","+",b)
+    cat("El punto (",p1,",",p2,")"," está SOBRE de la recta", "y=",m,"x","+",b)
   }
 }
 

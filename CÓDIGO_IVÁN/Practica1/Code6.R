@@ -6,12 +6,7 @@
 #está por encima, debajo o sobre la recta. No se contempla el caso
 #de rectas verticales
 #################################################################
-funcion_PuntoRecta_Determinante <- function(coordenada_x_punto = NULL,coordenada_y_punto = NULL, pendiente_recta = NULL, ordenada_origen_recta = NULL){
-  #Control de errores
-  if(is.null(ordenada_origen_recta)){
-    cat("Error: no se contempla el caso de rectas verticales")
-    return -1
-  }
+funcion_PuntoRecta_Determinante <- function(coordenada_x_punto,coordenada_y_punto, pendiente_recta, ordenada_origen_recta){
   p1=coordenada_x_punto
   p2=coordenada_y_punto
   m=pendiente_recta
@@ -28,7 +23,7 @@ funcion_PuntoRecta_Determinante <- function(coordenada_x_punto = NULL,coordenada
   }else{
     y=(y2:y1)
   }
-  plot(x,m*x+b, type='l', xlab="x", ylab="y", col="blue")
+  plot(x,m*x+b,xlim=c(x1,x2),ylim=c(-5,5), type='l', xlab="x", ylab="y", col="blue")
   points(p1,p2, col = "red", pch=19)
   text(p1-1,(m*(p1-1)+b)+2,'arriba')
   text(p1-1,(m*(p1-1)+b)-2,'abajo')
@@ -55,7 +50,6 @@ funcion_PuntoRecta_Determinante <- function(coordenada_x_punto = NULL,coordenada
     cat("El punto (",p1,",",p2,")"," está por ENCIMA de la recta", "y=",m,"x","+",b)
   }else if(determinante<0){
     cat("El punto (",p1,",",p2,")"," está por DEBAJO de la recta", "y=",m,"x","+",b)
-    
   }else{
     cat("El punto (",p1,",",p2,")"," está por SOBRE de la recta", "y=",m,"x","+",b)
   }

@@ -40,6 +40,9 @@ if(p2>m*p1+b){
 }
 }
 #Probamos la función
+#Probamos la función
+rm(list=ls())#Limpia Global Environment
+dev.off()#Limpia los plots
 #Ejemplo 1: p=(1,2), recta == y=3x+2
 funcion_PuntoRecta(1,2,3,2)
   
